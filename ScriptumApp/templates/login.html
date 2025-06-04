@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scriptum - Iniciar Sesión</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-left">
+                <img src="{% static 'images/scriptum-logo.png' %}" alt="Scriptum Logo" class="logo">
+                <h1 class="brand">Scriptum</h1>
+            </div>
+        </div>
+    </nav>
+
+    <main class="login-container">
+        <div class="login-card">
+            <h2>Iniciar Sesión Estudiante</h2>
+            <form class="login-form" action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña">
+                </div>
+                <div class="form-group">
+                    <label for="codigo">Código grupo</label>
+                    <input type="text" id="codigo" name="codigo" required placeholder="Ingresa el código de tu grupo">
+                </div>
+                <button type="submit" class="submit-button">Entrar</button>
+            </form>
+            <p class="register-link">¿No tienes una cuenta? <a href="{% url 'register' %}">Regístrate aquí</a></p>
+        </div>
+    </main>
+</body>
+</html>

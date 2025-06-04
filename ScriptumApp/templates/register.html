@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scriptum - Registro</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-left">
+                <img src="{% static 'images/scriptum-logo.png' %}" alt="Scriptum Logo" class="logo">
+                <h1 class="brand">Scriptum</h1>
+            </div>
+        </div>
+    </nav>
+
+    <main class="register-container">
+        <div class="register-card">
+            <h2>Registro de Estudiante</h2>
+            <form class="register-form" action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" id="nombre" name="nombre" required placeholder="Nombre Completo">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder="Correo electrónico">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" required placeholder="Contraseña">
+                </div>
+                <button type="submit" class="submit-button">Registrarte</button>
+            </form>
+            <p class="login-link">¿Ya tienes una cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a></p>
+        </div>
+    </main>
+</body>
+</html>
