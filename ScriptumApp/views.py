@@ -41,3 +41,6 @@ def admin_login_view(request):
             messages.error(request, 'Credenciales inválidas o usuario no es administrador')
     
     return render(request, 'admin_login.html')
+
+def about_view(request):
+    return render(request, 'about.html')

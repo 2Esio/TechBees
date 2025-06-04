@@ -6,4 +6,5 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('register/', views.register_view, name='register'),
     path('admin-login/', views.admin_login_view, name='admin_login'),  # Nueva URL
+    path('about/', views.about_view, name='about'),
 ]

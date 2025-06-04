@@ -52,6 +52,46 @@ body {
     font-weight: 500;
 }
 
+.nav-link,
+.submit-button,
+.register-button {
+    background-color: #4C9AFF;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.nav-link:hover,
+.submit-button:hover,
+.register-button:hover {
+    background-color: #2684FF;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Asegurarse que los botones mantengan el estilo al hacer focus */
+.nav-link:focus,
+.submit-button:focus,
+.register-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 154, 255, 0.3);
+}
+
+/* Reset any default button styles */
+button.register-button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
 .container {
     max-width: 1200px;
     margin: 4rem auto;
