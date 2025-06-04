@@ -27,3 +27,17 @@ def register_view(request):
         # Aquí irá la lógica de registro
         pass
     return render(request, 'register.html')
+
+def admin_login_view(request):
+    if request.method == 'POST':
+        email = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=email, password=password)
+        
+        if user is not None and user.is_staff:
+            login(request, user)
+            return redirect('admin:index')
+        else:
+            messages.error(request, 'Credenciales inválidas o usuario no es administrador')
+    
+    return render(request, 'admin_login.html')

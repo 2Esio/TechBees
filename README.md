@@ -33,4 +33,8 @@ python manage.py runserver
 ```bash
 python manage migrate
 ```
+- Ingresar como administrador
+```bash
+http://localhost:8000/admin-login/
+```
 
