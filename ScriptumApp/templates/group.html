@@ -86,11 +86,13 @@
     <nav class="navbar">
         <div class="nav-content">
             <div class="nav-left">
-                <img src="{% static 'images/scriptum-logo.png' %}" alt="Scriptum Logo" class="logo">
-                <h1 class="brand">Scriptum</h1>
+                <a href="{% url 'landing' %}" style="text-decoration: none; display: flex; align-items: center;">
+                    <img src="{% static 'images/scriptum-logo.png' %}" alt="Scriptum Logo" class="logo">
+                    <h1 class="brand">Scriptum</h1>
+                </a>
             </div>
             <div class="nav-right">
-                <a href="{% url 'about' %}" class="nav-link">Mi Perfil</a>
+                <a href="{% url 'group' %}" class="nav-link">Mi Perfil</a>
             </div>
         </div>
     </nav>
