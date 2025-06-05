@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scriptum - Vista de Grupo</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+    <style>
+        .group-container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .group-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .group-name {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .tab {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin: 0;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-left">
+                <img src="{% static 'images/scriptum-logo.png' %}" alt="Scriptum Logo" class="logo">
+                <h1 class="brand">Scriptum</h1>
+            </div>
+            <div class="nav-right">
+                <a href="{% url 'about' %}" class="nav-link">Mi Perfil</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="group-container">
+        <div class="group-header">
+            <h2 class="group-name">Grupo 1</h2>
+        </div>
+
+        <div class="tabs">
+            <a href="#" class="tab active">Actividad</a>
+            <a href="#" class="tab">Concurso</a>
+            <a href="#" class="tab">Mi Perfil</a>
+        </div>
+
+        <div class="profiles-grid">
+            <!-- Perfil 1 -->
+            <a href="{% url 'profile' id=1 %}" style="text-decoration: none;">
+                <div class="profile-card">
+                    <img src="{% static 'images/irvin.jpg' %}" alt="Perfil 1" class="profile-image">
+                    <h3 class="profile-name">Irvin Javier Cruz Gonzalez</h3>
+                </div>
+            </a>
+
+            <!-- Perfil 2 -->
+            <a href="{% url 'profile' id=2 %}" style="text-decoration: none;">
+                <div class="profile-card">
+                    <img src="{% static 'images/ixchel.png' %}" alt="Perfil 2" class="profile-image">
+                    <h3 class="profile-name">Ixchel</h3>
+                </div>
+            </a>
+
+            <!-- Perfil 3 -->
+            <a href="{% url 'profile' id=3 %}" style="text-decoration: none;">
+                <div class="profile-card">
+                    <img src="{% static 'images/jimena.png' %}" alt="Perfil 3" class="profile-image">
+                    <h3 class="profile-name">Jimena Ugalde Flores</h3>
+                </div>
+            </a>
+
+            <!-- Perfil 4 -->
+            <a href="{% url 'profile' id=4 %}" style="text-decoration: none;">
+                <div class="profile-card">
+                    <img src="{% static 'images/marco.png' %}" alt="Perfil 3" class="profile-image">
+                    <h3 class="profile-name">Marco Flores Cid</h3>
+                </div>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

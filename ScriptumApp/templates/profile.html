@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scriptum - Perfil</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+    <style>
+        .profile-container {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .profile-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 2rem;
+        }
+
+        .profile-main {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .profile-details {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .awards {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-left">
+                <img src="{% static 'images/scriptum-logo.png' %}" alt="Scriptum Logo" class="logo">
+                <h1 class="brand">Scriptum</h1>
+            </div>
+            <div class="nav-right">
+                <a href="{% url 'group' %}" class="nav-link">Volver al grupo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="profile-container">
+        <div class="profile-content">
+            <div class="profile-main">
+                <img src="{% static profile_image %}" alt="Foto de perfil" class="profile-image">
+                <h2 class="profile-name">{{ profile_name }}</h2>
+            </div>
+            
+            <div class="profile-details">
+                <div class="description">
+                    <h3 class="section-title">Descripción</h3>
+                    <p>{{ description }}</p>
+                </div>
+                
+                <div class="awards">
+                    <h3 class="section-title">Premios</h3>
+                    <p>{{ awards }}</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
