@@ -86,6 +86,56 @@ def profile_view(request, id):
         'description': 'No hay descripción disponible',
         'awards': 'Sin premios'
     })
+    
+    # Agregar el id del perfil al contexto
+    profile_data['profile_id'] = id
 
     return render(request, 'profile.html', profile_data)
+
+@require_http_methods(["POST"])
+def update_description(request):
+    try:
+        data = json.loads(request.body)
+        profile_id = data.get('profile_id')
+        new_description = data.get('description')
+        
+        # Actualizar la descripción en el diccionario de perfiles
+        profiles = {
+            1: {
+                'profile_image': 'images/irvin.jpg',
+                'profile_name': 'Irvin Javier Cruz Gonzalez',
+                'description': new_description,  # Actualización aquí
+                'awards': 'Lista de premios...'
+            },
+            2: {
+                'profile_image': 'images/ixchel.png',
+                'profile_name': 'Ixchel',
+                'description': new_description if profile_id == 2 else 'Descripción del perfil...',
+                'awards': 'Lista de premios...'
+            },
+            3: {
+                'profile_image': 'images/jimena.png',
+                'profile_name': 'Jimena Ugalde Flores',
+                'description': new_description if profile_id == 3 else 'Descripción del perfil...',
+                'awards': 'Lista de premios...'
+            },
+            4: {
+                'profile_image': 'images/marco.png',
+                'profile_name': 'Marco Flores Cid',
+                'description': new_description if profile_id == 4 else 'Descripción del perfil...',
+                'awards': 'Lista de premios...'
+            }
+        }
+
+        # En una implementación real, aquí actualizarías la base de datos
+        # Por ahora solo devolvemos una respuesta exitosa
+        return JsonResponse({
+            'status': 'success',
+            'description': new_description
+        })
+    except Exception as e:
+        return JsonResponse({
+            'status': 'error',
+            'message': str(e)
+        }, status=400)
 
