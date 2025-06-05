@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scriptum - Acerca de nosotros</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/scriptum-logo.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/scriptum-logo.png' %}">
+    <style>
+        .about-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;  /* Ajusta la altura mínima */
+        }
+
+        .company-logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1.5rem;
+        }
+
+        .company-name {
+            color: var(--primary-color);
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .company-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0 auto;
+            text-align: center;
+            max-width: 600px;  /* Limita el ancho del texto */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;  /* Cambiado de 4rem auto a 0 auto */
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 80px);  /* Altura total menos la navbar */
+        }
+
+        @media (max-width: 768px) {
+            .company-name {
+                font-size: 2rem;
+            }
+            
+            .company-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-left">
+                <img src="{% static 'images/scriptum-logo.png' %}" alt="Scriptum Logo" class="logo">
+                <a href="{% url 'landing' %}" class="brand">Scriptum</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="about-section">
+            <img src="{% static 'images/bee.png' %}" alt="TechBees Logo" class="company-logo">
+            <h2 class="company-name">TechBees</h2>
+            <h3>Buzzing with Innovation</h3>
+            <div class="company-description">
+                <p>
+                    TechBees encarna la unión entre el mundo orgánico y el digital. Somos constructores, pero también facilitadores; trabajamos 
+                    con la inteligencia colectiva de una colmena para entregar software que no solo funciona, sino que perdura y evoluciona. 
+                    Porque en la era de la transformación digital, la verdadera innovación no es solo técnica, sino estratégica… y nadie lo entiende mejor que TechBees.
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

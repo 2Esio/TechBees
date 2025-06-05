@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scriptum - Tu historia escolar</title>
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/scriptum-logo.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/scriptum-logo.png' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-left">
+            <a href="{% url 'landing' %}" style="text-decoration: none; display: flex; align-items: center;">
+                <img src="{% static 'images/scriptum-logo.png' %}" alt="Scriptum Logo" class="logo">
+                <h1 class="brand">Scriptum</h1>
+            </a>
+        </div>
+            <div class="nav-right">
+                <a href="{% url 'about' %}" class="nav-link">Conócenos</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="left-section">
+            <h2 class="main-title">Tu historia escolar,<br>para siempre</h2>
+            <p class="description">
+                Crea y comparte recuerdos inolvidables con tus compañeros de clase. 
+                Un espacio digital para preservar los momentos más especiales de tu vida escolar.
+
+                Si ya tienes una cuenta, inicia sesión para acceder a tu anuario digital.
+            </p>
+            <a href="{% url 'login' %}" class="submit-button">Comienza tu historia</a>
+        </div>
+
+        <div class="right-section">
+            <div class="card">
+                <h3 class="card-title">¿Eres un estudiante nuevo?</h3>
+                <p class="card-text">
+                    Únete a tu anuario digital y comienza a compartir tus mejores momentos escolares. 
+                    Un administrador te proporcionará el código de acceso, pero para ello tienes que registrarte primero.
+                </p>
+                <button onclick="window.location.href='{% url 'register' %}'" class="register-button">Registrarme</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

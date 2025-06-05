@@ -1,0 +1,137 @@
+:root {
+    --primary-color: #4A90E2;
+    --text-color: #333333;
+    --background-color: #F5F5F5;
+    --card-background: #FFFFFF;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+}
+
+.navbar {
+    background-color: var(--card-background);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 40px;
+}
+
+.brand {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 2rem;
+}
+
+.login-card {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-card h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-group input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.submit-button {
+    background-color: #4D9BFF;  /* Color azul más brillante */
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 100px;  /* Radio más pronunciado */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 4px 15px rgba(77, 155, 255, 0.3);  /* Sombra más suave y expansiva */
+}
+
+.submit-button:hover {
+    background-color: #3D8BFF;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(77, 155, 255, 0.4);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(77, 155, 255, 0.3);
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--text-color);
+}
+
+.register-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
